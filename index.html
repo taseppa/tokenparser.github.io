@@ -1,1 +1,26 @@
-Token parser
+<html>
+
+<head>
+    <script>
+        function getToken() {
+          let re = /access_token=(.*)&/;
+            let response = document.getElementById('response').value;
+            let result = re.exec(response);
+            if (result === null) {
+              alert("Invalid token response");
+            } else {
+              document.getElementById('accessToken').value = result[1];
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h2>Token parser</h2>
+    <textarea id="response" rows="15" cols="120"></textarea>
+    <p><input type="button" id="getTokenButton" onClick="getToken()" value="Parse"></p>
+    <label for="accesToken">Access token:</label>
+    <input type="text" id="accessToken">
+</body>
+
+</html>
