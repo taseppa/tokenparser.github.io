@@ -1,26 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 
 <head>
-    <script>
+    <meta name="generator" content="HTML Tidy for Linux (vers 25 March 2009), see www.w3.org">
+    <script type="text/javascript">
         function getToken() {
-          let re = /access_token=(.*)&/;
+            let re = /access_token=(.*)&/;
             let response = document.getElementById('response').value;
             let result = re.exec(response);
             if (result === null) {
-              alert("Invalid token response");
+                alert("Invalid token response");
             } else {
-              document.getElementById('accessToken').value = result[1];
+                document.getElementById('accessToken').value = result[1];
             }
         }
     </script>
+    <title></title>
 </head>
 
 <body>
     <h2>Token parser</h2>
-    <textarea id="response" rows="15" cols="120"></textarea>
-    <p><input type="button" id="getTokenButton" onClick="getToken()" value="Parse"></p>
+    <textarea id="response" rows="15" cols="120">
+</textarea>
+    <p><input type="button" id="getTokenButton" onclick="getToken()" value="Parse"></p>
     <label for="accesToken">Access token:</label>
-    <input type="text" id="accessToken">
+    <form><input type="text" id="accessToken"></form>
 </body>
 
 </html>
